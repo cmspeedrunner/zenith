@@ -21,7 +21,7 @@ while loop == True:
         except ValueError:
             return ""
     if "calc" in s:
-        calc = (eval(find_between( s, "[", "]" )))
+        calc = int((eval(find_between( s, "[", "]" ))))
         print(calc)
     if "log" in s:
         log = ((find_between( s, "['", "']" )))
