@@ -40,4 +40,19 @@ EG: <b>ddir['C:\Users\User\Desktop\New Dir']<br></b>
 size - this is the size function and allows you to view the memory contained in a string or int<br>
 EG: <b>size['Hello World 2023!']<br></b>
 
-#Variables
+# Variables
+strv - this will declare a string variable.<br>
+EG: <b>strv['x']<'Hello World'></b><br>
+the [] brackets denote the variable name and the <> brackets denote the content inside the variable<br>
+ 
+intv - this will declare an integer variable.<br>
+EG: <b>intv['y']<500></b><br>
+the [] brackets denote the variable name and the <> brackets denote the content inside the variable<br>
+ 
+logv - this will log a variable<br>
+EG: <b>logv[x]</b><br>
+the [] brackets denote the variable name<br>
+ 
+calc - can also calculate variables<br>
+EG: <b>calc[x+y-z*w]</b><br>
+providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
