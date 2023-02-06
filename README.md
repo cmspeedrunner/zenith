@@ -10,4 +10,13 @@ log. - this will log a message but, as many times as you want, the "." denotes t
 EG: <b>log.['Hello World!']<<5>><br></b>
 
 calc - this is a simple calculate function<br>
-EG: <b>log.[5*5+3-3/3]<br></b>
+EG: <b>calc[5*5+3-3/3]<br></b>
+
+cdir - this is the create directory function and will create a directory at the path specified<br>
+EG: <b>cdir['C:\Users\User\Desktop\New Dir']<br></b>
+
+rand - this is the random number function, by default it goes from 0 to your number in range.<br>
+EG: <b>rand[50]<br></b>
+
+rinr - this is the random in range function, this allows you enter 2 arguments to randomise a number in the range of the 2 args you entered<br>
+EG: <b>rand[50]<100><br></b>
