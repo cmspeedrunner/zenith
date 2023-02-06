@@ -6,5 +6,8 @@ Zip is a interpreted, one line, Command Line style programming language with ver
 log - what you might know as the print function, log will display whatever you want to log, make sure you dont use "" and instead you use '' when logging<br>
 EG: <b>log['Hello World!']<br></b>
 
-log. - this will log a message but, as many times as you want, the "." denotes that it can be indefinite
+log. - this will log a message but, as many times as you want, the "." denotes that it can be indefinite<br>
 EG: <b>log.['Hello World!']<<5>><br></b>
+
+calc - this is a simple calculate function<br>
+EG: <b>log.[5*5+3-3/3]<br></b>
