@@ -39,3 +39,5 @@ EG: <b>ddir['C:\Users\User\Desktop\New Dir']<br></b>
  
 size - this is the size function and allows you to view the memory contained in a string or int<br>
 EG: <b>size['Hello World 2023!']<br></b>
+
+#Variables
