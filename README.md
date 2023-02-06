@@ -1,5 +1,5 @@
-# Zip
-Zip is a interpreted, one line, Command Line style programming language with very low level access to the system with easy, and readable syntax.
+# Zenith
+Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system with easy, and readable syntax.
 
 # Syntax
 
@@ -28,7 +28,7 @@ The L: tag denotes Location and the C: tag denotes the Content within the file.<
 ourl - this is the open url function and will open <br>
 EG: <b>ourl['https://google.com']<br></b>
 
-pass - this is the pass function and allows you to pass commands to the command line and allows you to control the system from Zip, you can even run python in it!<br>
+pass - this is the pass function and allows you to pass commands to the command line and allows you to control the system from Zenith, you can even run python in it!<br>
 EG: <b>pass['shutdown /i']<br></b>
  
 dfil - this is the delete file function and allows you to delete any file<br>
