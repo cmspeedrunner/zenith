@@ -32,7 +32,7 @@ pass - this is the pass function and allows you to pass commands to the command 
 EG: <b>pass['shutdown /i']<br></b>
  
 dfil - this is the delete file function and allows you to delete any file<br>
-EG: <b>ddir['C:\Users\User\Desktop\New Dir\My Text File.txt']<br></b>
+EG: <b>dfil['C:\Users\User\Desktop\New Dir\My Text File.txt']<br></b>
  
 ddir - this is the delete directory function and allows you to delete any directory<br>
 EG: <b>ddir['C:\Users\User\Desktop\New Dir']<br></b>
