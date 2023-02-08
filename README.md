@@ -5,12 +5,7 @@ Zenith is a interpreted, one line, Command Line style programming language with 
 
 log - what you might know as the print function, log will display whatever you want to log, make sure you dont use "" and instead you use '' when logging<br>
 EG: <b>log['Hello World!']<br></b>
-
-log. - this will log a message but, as many times as you want, the "." denotes that it can be indefinite<br>
-EG: <b>log.['Hello World!']<5><br></b>
-
-calc - this is a simple calculate function<br>
-EG: <b>calc[5*5+3-3/3]<br></b>
+EG: <b>log[5*5+3-3/3]<br></b>
 
 cdir - this is the create directory function and will create a directory at the path specified<br>
 EG: <b>cdir['C:\Users\User\Desktop\New Dir']<br></b>
@@ -41,18 +36,17 @@ size - this is the size function and allows you to view the memory contained in 
 EG: <b>size['Hello World 2023!']<br></b>
 
 # Variables
-strv - this will declare a string variable.<br>
-EG: <b>strv['x']<'Hello World'></b><br>
+var - this will declare a string variable.<br>
+EG: <b>var['x']<'Hello World'></b><br>
 the [] brackets denote the variable name and the <> brackets denote the content inside the variable<br>
- 
-intv - this will declare an integer variable.<br>
-EG: <b>intv['y']<500></b><br>
+int variables are similar just with no quotes<br>
+EG: <b>var['y']<500></b><br>
 the [] brackets denote the variable name and the <> brackets denote the content inside the variable<br>
  
 logv - this will log a variable<br>
-EG: <b>logv[x]</b><br>
+EG: <b>log[x+x]</b><br>
 the [] brackets denote the variable name<br>
  
-calc - can also calculate variables<br>
-EG: <b>calc[x+y-z*w]</b><br>
+log - can also calculate variables<br>
+EG: <b>log[x+y-z*w]</b><br>
 providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
