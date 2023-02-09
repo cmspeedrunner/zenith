@@ -43,10 +43,27 @@ int variables are similar just with no quotes<br>
 EG: <b>var['y']<500></b><br>
 the [] brackets denote the variable name and the <> brackets denote the content inside the variable<br>
  
-logv - this will log a variable<br>
-EG: <b>log[x+x]</b><br>
-the [] brackets denote the variable name<br>
  
 log - can also calculate variables<br>
 EG: <b>log[x+y-z*w]</b><br>
 providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
+
+# Graphing and plotting (EXPERIMENTAL)
+2dln - to do a 2d line graph plot.<br>
+EG: <b>2dln[1,2,3,4,5,6,7,9]</b><br>
+Arrays (which can be saved in variables) are interpreted into the graph here.
+
+3dsc - to do a 3d scatter graph<br>
+EG: <b>3dsc[1,2,3,4,5,6,7,8,9]<1,2,3,4,5,6,7,8,9>(1,2,3,4,5,6,7,8,9)</b><br>
+the first [] bracket arg is the X pos, the second <> arg is the Y pos and the () arg is the Z pos. These arrays link up, make sure all 3 of these indexes have the same number of values in them, otherwise they cant marry or link the numbers together<br>
+
+3dcl - to do a 3d coil graph<br>
+EG: <b>3dcl[0]<10>(6){2}</b><br>
+
+3dcl - to do a 3d surface graph<br>
+EG: <b>3dcl[-5]<5.1>(0.2)</b><br>
+the [] bracket arg denotes the lowest point and the <> brackets denote the highest, the () brackets denote the Z occurence
+
+
+
+
