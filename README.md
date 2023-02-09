@@ -14,7 +14,7 @@ rand - this is the random number function, by default it goes from 0 to your num
 EG: <b>rand[50]<br></b>
 
 rinr - this is the random in range function, this allows you enter 2 arguments to randomise a number in the range of the 2 args you entered<br>
-EG: <b>rand[50]<100><br></b>
+EG: <b>rinr[50]<100><br></b>
 
 wrto - this is the write to function and allows you to write text into or over a file<br>
 EG: <b>wrto[L:'C:\Users\User\Desktop\New Dir\My Text File.txt']<C:'Content goes here! I can put anything here!'><br></b>
