@@ -65,7 +65,7 @@ EG: <b>3dcl[0]<10>(6){2}</b><br>
 
 3dcl - to do a 3d surface graph<br>
 EG: <b>3dcl[-5]<5.1>(0.2)</b><br>
-the [] bracket arg denotes the lowest point and the <> brackets denote the highest, the () brackets denote the Z occurence
+the [] bracket arg denotes the lowest point and the <> brackets denote the highest, the () brackets denotes the graphics, smaller float point = more polygons. (0 DOES NOT WORK, NEEDS TO BE FLOAT)
 
 
 
