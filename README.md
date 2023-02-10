@@ -85,3 +85,6 @@ the first [] bracket arg is the X pos, the second <> arg is the Y pos. These arr
 
 2dsp - show a 2d spectural map of any image on your computer<br>
 EG: <b>2dsp['Users/User/Desktop/obama.jpg']</b><br>
+
+brcd - render and create a barcode from binary<br>
+EG: <b>brcd[ 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1,]</b><br>
