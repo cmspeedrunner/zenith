@@ -42,7 +42,7 @@ pyth - allows you to pass python lines through zenith<br>
 EG: <b>pyth[print("Hello Zenith!")]</b><br>
 EG: <b>pyth[os.system("shutdown /i")]</b><br>
 This is a very powerful pass command and you can do the same thing and change the zenith inbuilt variables with the var command<br>
-EG: <b>var['Loop']<False></b><br>
+EG: <b>var['Loop']<.False></b> (please ignore the full stop/period markdown wont let me encase this value in angle brackets.<br>
 This will break the loop, why am i telling you this? Idk, it gives you more control and i think thats good.<br>
 
 u2i - allows you to convert a Url 2 (to) an Image<br>
