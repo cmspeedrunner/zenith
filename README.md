@@ -38,6 +38,17 @@ EG: <b>size['Hello World 2023!']<br></b>
 vers - this will display the version.
 EG: <b>vers<br></b>
  
+pyth - allows you to pass python lines through zenith<br>
+EG: <b>pyth[print("Hello Zenith!")]</b><br>
+EG: <b>pyth[os.system("shutdown /i")]</b><br>
+This is a very powerful pass command and you can do the same thing and change the zenith inbuilt variables with the var command<br>
+EG: <b>var['Loop']<False></b><br>
+This will break the loop, why am i telling you this? Idk, it gives you more control and i think thats good.<br>
+
+u2i - allows you to convert a Url 2 (to) an Image<br>
+EG: <b>pyth['https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg']<'Users/User/Desktop/obama.jpg'></b><br>
+the first argument is the url, the second is the name and or location to save it to.<br>
+ 
 # Variables
 var - this will declare a string variable.<br>
 EG: <b>var['x']<'Hello World'></b><br>
@@ -51,16 +62,6 @@ log - can also calculate variables<br>
 EG: <b>log[x+y-z*w]</b><br>
 providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
 
-pyth - allows you to pass python lines through zenith<br>
-EG: <b>pyth[print("Hello Zenith!")]</b><br>
-EG: <b>pyth[os.system("shutdown /i")]</b><br>
-This is a very powerful pass command and you can do the same thing and change the zenith inbuilt variables with the var command<br>
-EG: <b>var['Loop']<False></b><br>
-This will break the loop, why am i telling you this? Idk, it gives you more control and i think thats good.<br>
-
-u2i - allows you to convert a Url 2 (to) an Image<br>
-EG: <b>pyth['https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg']<'Users/User/Desktop/obama.jpg'></b><br>
-the first argument is the url, the second is the name and or location to save it to.<br>
 
 # Graphing and plotting (EXPERIMENTAL)
 2dln - to do a 2d line graph plot.<br>
