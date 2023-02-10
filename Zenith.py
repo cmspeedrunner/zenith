@@ -2,10 +2,14 @@ import os
 import webbrowser
 import sys
 import random
-
+import keyboard
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 loop = True
 while loop == True:
-    s = input("ZNTH>>>")
+    plt.rcParams["figure.autolayout"] = True
+    s = input("ZTH>>>")
     def find_between( s, first, last ):
         try:
             start = s.index( first ) + len( first )
@@ -21,60 +25,117 @@ while loop == True:
             return s[start:end]
         except ValueError:
             return ""
-    if "calc" in s:
+    
+    
+    if "log" in s:
         calc = (eval(find_between( s, "[", "]" )))
         print(calc)
-    if "log" in s:
-        log = ((find_between( s, "['", "']" )))
-        print(log)
-    if "log." in s:
-        num = find_between( s, "<", ">" )
-        main = int(num)
-        for int in range(main):
-            eval = find_between( s, "['", "']" )
-            print(eval)
+
     if "cdir" in s:
-        os.mkdir(find_between( s, "['", "']" ))
+        os.mkdir(eval(find_between( s, "[", "]" )))
     if "rand" in s:
-        main = int(find_between( s, "[", "]" ))
+        main = int(eval(find_between( s, "[", "]" )))
         print(random.randint(0,main))
     if "rinr" in s:
-        main = int(find_between( s, "[", "]" ))
-        main2 = int(find_between( s, "<", ">" ))
+        main = int(eval(find_between( s, "[", "]" )))
+        main2 = int(eval(find_between( s, "<", ">" )))
         print(random.randint(main,main2))
+    if "wrto" in s and "[L:" in s and "[L:'" not in s:
+        location = (eval(find_between( s, "[L:'", "']" )))
+        content = (eval(find_between( s, "<C:'", "'>" )))
+        f = open(location, "a")
+        f.write(content)
+        f.close()
     if "wrto" in s:
-        location = (find_between( s, "[L:'", "']" ))
-        content = (find_between( s, "<C:'", "'>" ))
+        location = (eval(find_between( s, "[L:", "]" )))
+        content = (eval(find_between( s, "<C:", ">" )))
         f = open(location, "a")
         f.write(content)
         f.close()
     if "ourl" in s:
-        log = ((find_between( s, "['", "']" )))
+        log = (eval(find_between( s, "[", "]" )))
         webbrowser.open_new(log)
     if "pass" in s:
-        os.system(find_between( s, "['", "']" ))
+        calc = (eval(find_between( s, "[", "]" )))
+        os.system(calc)
     if "dfil" in s:
-        os.remove(find_between( s, "['", "']" ))
+        calc = (eval(find_between( s, "[", "]" )))
+        os.remove(calc)
     if "ddir" in s:
-        os.removedirs(find_between( s, "['", "']" ))
+        calc = (eval(find_between( s, "[", "]" )))
+        os.removedirs(calc)
     if "size" in s:
-        main = (sys.getsizeof(find_between( s, "['", "']" ))," BITS")
+        calc = (eval(find_between( s, "[", "]" )))
+        main = (sys.getsizeof(calc)," BITS")
         print(main)
-        print(len(find_between( s, "['", "']" ))," BYTES")
-
-    if "strv" in s:
+        print(len(find_between( s, "[", "]" ))," BYTES")
+    if "var" in s and "<'" not in s:
         input_name = find_between( s, "['", "']" ) 
-        input_val = str(find_between( s, "<'", "'>" ))
+        input_val = (eval(find_between( s, "<", ">" )))
         globals()[input_name] = input_val
-    if "intv" in s:
+    if "var" in s and "<'" in s:
         input_name = find_between( s, "['", "']" ) 
-        input_val = int(find_between( s, "<", ">" ))
+        input_val = (str(find_between( s, "<'", "'>" )))
         globals()[input_name] = input_val
-    if "logv" in s:
-        input_name = find_between( s, "[", "]" ) 
-        print(globals()[input_name])
+    if "vers" in s:
+        github = 'https://github.com/cmspeedrunner/zenith'
+        print("\nZenithScript Programming Language\nCmSpeedrunner2023\nOpen Source\nV/0.3\nhttps://github.com/cmspeedrunner/zenith")
+    if "2dln" in s:
+        opp = (eval(find_between( s, "[", "]" ))) 
+        oppf = np.array(opp)
+        opp2f = np.sort(oppf)
+        plt.title("Line Graph")
+        plt.plot(oppf, opp2f, color="red")
+        plt.show()
+    if "3dsc" in s:
+        opp = (eval(find_between( s, "[", "]" ))) 
+        opp2 = (eval(find_between( s, "<", ">" ))) 
+        opp3 = (eval(find_between( s, "(", ")" ))) 
 
+        fig = plt.figure(figsize = (10,10))
+        ax = plt.axes(projection='3d')
+        ax.grid()
 
+        ax.scatter(opp, opp2, opp3, c = 'r', s = 50)
+        ax.set_title('3D Scatter Plot')
+        plt.show()
+    if "3dcl" in s:
+        opp = (eval(find_between( s, "[", "]" ))) 
+        opp2 = (eval(find_between( s, "<", ">" ))) 
+        opp3 = (eval(find_between( s, "(", ")" ))) 
+        opp4 = (eval(find_between( s, "{", "}" )))
+        fig = plt.figure(figsize = (8,8))
+        ax = plt.axes(projection='3d')
+        ax.grid()
+        t = np.arange(opp, opp2*opp3, opp4)
+        x = np.sin(t)
+        y = np.cos(t)
+
+        ax.plot3D(x, y, t)
+
+        plt.show()
+    if "3dsf" in s:
+        opp = (eval(find_between( s, "[", "]" ))) 
+        opp2 = (eval(find_between( s, "<", ">" ))) 
+        opp3 = (eval(find_between( s, "(", ")" ))) 
+        fig = plt.figure(figsize = (12,10))
+        ax = plt.axes(projection='3d')
+
+        x = np.arange(opp, opp2, opp3)
+        y = np.arange(opp, opp2, opp3)
+
+        X, Y = np.meshgrid(x, y)
+        Z = np.sin(X)*np.cos(Y)
+
+        surf = ax.plot_surface(X, Y, Z, cmap = plt.cm.cividis)
+
+        fig.colorbar(surf, shrink=0.5, aspect=8)
+        plt.show()
+
+    if "3dgr" in s:
+        fig = plt.figure(figsize = (12,10))
+        ax = plt.axes(projection='3d')
+        plt.show()
 
     if "" in s and "exit" not in s:
         continue
