@@ -51,6 +51,17 @@ log - can also calculate variables<br>
 EG: <b>log[x+y-z*w]</b><br>
 providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
 
+pyth - allows you to pass python lines through zenith<br>
+EG: <b>pyth[print("Hello Zenith!")]</b><br>
+EG: <b>pyth[os.system("shutdown /i")]</b><br>
+This is a very powerful pass command and you can do the same thing and change the zenith inbuilt variables with the var command<br>
+EG: <b>var['Loop']<False></b><br>
+This will break the loop, why am i telling you this? Idk, it gives you more control and i think thats good.<br>
+
+u2i - allows you to convert a Url 2 (to) an Image<br>
+EG: <b>pyth['https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg']<'Users/User/Desktop/obama.jpg'></b><br>
+the first argument is the url, the second is the name and or location to save it to.<br>
+
 # Graphing and plotting (EXPERIMENTAL)
 2dln - to do a 2d line graph plot.<br>
 EG: <b>2dln[1,2,3,4,5,6,7,9]</b><br>
@@ -67,6 +78,9 @@ EG: <b>3dcl[0]<10>(6){2}</b><br>
 EG: <b>3dcl[-5]<5.1>(0.2)</b><br>
 the [] bracket arg denotes the lowest point and the <> brackets denote the highest, the () brackets denotes the graphics, smaller float point = more polygons. (0 DOES NOT WORK, NEEDS TO BE FLOAT)
 
+2dsc - to do a 2d scatter graph<br>
+EG: <b>3dcl[1,2,3,4,5,6,7,8,9]<1,2,3,4,5,6,7,8,9></b><br>
+the first [] bracket arg is the X pos, the second <> arg is the Y pos. These arrays link up, make sure all 3 of these indexes have the same number of values in them, otherwise they cant marry or link the numbers together<br>
 
-
-
+2dsp - show a 2d spectural map of any image on your computer<br>
+EG: <b>2dsp['Users/User/Desktop/obama.jpg']</b><br>
