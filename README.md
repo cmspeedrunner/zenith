@@ -88,3 +88,7 @@ EG: <b>2dsp['Users/User/Desktop/obama.jpg']</b><br>
 
 brcd - render and create a barcode from binary<br>
 EG: <b>brcd[ 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1,]</b><br>
+
+3dsp - create a 3d spore growing animation<br>
+EG: <b>3dsp[50]<0.05></b><br>
+the first [] bracket represents how long the spores will grow for, anything >200 will look wacky. the <> brackets represent the spore scale essentially, keep it at 0.05, it is reccomended.
