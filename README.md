@@ -20,6 +20,9 @@ ect...<br>
 `get` - send a http post request<br>
 EG: <b>get['https://google.com']<text/html><br></b>
 
+`help` - get help on any command<br>
+EG: <b>help['log']<text/html><br></b>
+
 `cdir` - this is the create directory function and will create a directory at the path specified<br>
 EG: <b>cdir['C:\Users\User\Desktop\New Dir']<br></b>
 
