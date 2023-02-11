@@ -11,7 +11,6 @@ EG: <b>log[5*5+3-3/3]<br></b>
 
 `get` - send a http post request<br>
 EG: <b>get['https://google.com']<text/html><br></b>
-EG: <b>log[5*5+3-3/3]<br></b>
 
 `cdir` - this is the create directory function and will create a directory at the path specified<br>
 EG: <b>cdir['C:\Users\User\Desktop\New Dir']<br></b>
@@ -41,16 +40,19 @@ EG: <b>ddir['C:\Users\User\Desktop\New Dir']<br></b>
 `size` - this is the size function and allows you to view the memory contained in a string or int<br>
 EG: <b>size['Hello World 2023!']<br></b>
 
-`vers` - this will display the version.
+`vers` - this will display the version.<br>
 EG: <b>vers<br></b>
 
-`up` - this will uppercase text.
+`zclr` - this is the zenith clear function, you may know it as the cls function.<br>
+EG: <b>zclr<br></b>
+
+`up` - this will uppercase text.<br>
 EG: <b>up['hello']<br></b>
 
-`low` - this will lowercase text.
+`low` - this will lowercase text.<br>
 EG: <b>low['HELLO']<br></b>
  
-`tts` - this will speak out text using tts.
+`tts` - this will speak out text using tts.<br>
 EG: <b>tts['Hello Zenith!']<br></b>
  
 `pyth` - allows you to pass python lines through zenith<br>
