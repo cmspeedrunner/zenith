@@ -1,5 +1,5 @@
 # Zenith
-Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system with easy, and readable syntax.
+Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system, control flow editing, variables, calculations, immense data analysis, conversion and web interaction with easy, and readable syntax.
 
 # Syntax
 
