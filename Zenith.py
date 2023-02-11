@@ -11,14 +11,128 @@ from PIL import Image
 import urllib.request
 import matplotlib.image as mpimg
 import matplotlib.animation as animation
-import matplotlib.cbook as cbook
 import matplotlib.cm as cm
 from matplotlib.collections import LineCollection
 from matplotlib.ticker import MultipleLocator
 import pyperclip
-import scipy
 import pyttsx3
+import colorama
+colorama.init()
 engine = pyttsx3.init()
+
+####defining very important dict####
+loa = {
+"log": """what you might know as the print function, log will display whatever you want to log, make sure you dont use "" and instead you use '' when logging
+EG: log['Hello World!']
+EG: log[5*5+3-3/3]""",
+
+"lg--": """will log something for a number of times
+EG: lg--['Hello World!']<500>(DN: True)
+the [] bracket denotes the value to be logging. The <> bracket denotes how many times you will be logging that value, the () bracket is essentially asking if you want to display the number""",
+
+"var": """this will declare a string variable.
+EG: var['x']<'Hello World'>
+the [] brackets denote the variable name and the <> brackets denote the content inside the variable
+int variables are similar just with no quotes
+EG: var['y']<500>
+the [] brackets denote the variable name and the <> brackets denote the content inside the variable""",
+
+"get": """send a http post request
+EG: get['https://google.com']<text/html>""",
+
+"rand": """this is the random number function, by default it goes from 0 to your number in range.
+EG: rand[50]""",
+
+"cdir": """this is the create directory function and will create a directory at the path specified
+EG: cdir['C:/Users/User/Desktop/New Dir']""",
+
+"rinr": """this is the random in range function, this allows you enter 2 arguments to randomise a number in the range of the 2 args you entered
+EG: rinr[50]<100>""",
+
+"wrto": """his is the write to function and allows you to write text into or over a file
+EG: wrto[L:'C:/Users/User/Desktop/New Dir/My Text File.txt']<C:'Content goes here! I can put anything here!'>
+The L: tag denotes Location and the C: tag denotes the Content within the file.""",
+
+"ourl": """this is the open url function and will open
+EG: ourl['https://google.com']""",
+
+"pass": """this is the pass function and allows you to pass commands to the command line and allows you to control the system from Zenith, you can even run python in it!
+EG: pass['shutdown /i']""",
+
+"dfil": """this is the delete file function and allows you to delete any file
+EG: dfil['C:/Users/User/Desktop/New Dir/My Text File.txt']""",
+
+"ddir": """this is the delete directory function and allows you to delete any directory
+EG: ddir['C:/Users/User/Desktop/New Dir']""",
+
+"size": """this is the size function and allows you to view the memory contained in a string or int
+EG: size['Hello World 2023!']""",
+
+"vers": """this will display the version.
+EG: vers""",
+
+"zclr": """this is the zenith clear function, you may know it as the cls function.
+EG: zclr""",
+
+"up": """this will uppercase text.
+EG: up['hello']""",
+
+"low": """this will lowercase text.
+EG: low['HELLO']""",
+
+"tts": """this will speak out text using tts.
+EG: tts['Hello Zenith!']""",
+
+"pyth": """allows you to pass python lines through zenith
+EG: pyth[print("Hello Zenith!")]
+EG: pyth[os.system("shutdown /i")]""",
+
+"u2i": """ allows you to convert a Url 2 (to) an Image
+EG: pyth['https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg']<'Users/User/Desktop/obama.jpg'>
+the first argument is the url, the second is the name and or location to save it to.""",
+
+"html": """allows you to convert a url to pure html
+EG: html['https://google.com']""",
+
+"what": """print type of value
+EG: what[True]""",
+
+"2dln": """to do a 2d line graph plot.
+EG: 2dln[1,2,3,4,5,6,7,9]
+Arrays (which can be saved in variables) are interpreted into the graph here.""",
+
+"3dsc": """to do a 3d scatter graph
+EG: 3dsc[1,2,3,4,5,6,7,8,9]<1,2,3,4,5,6,7,8,9>(1,2,3,4,5,6,7,8,9)
+the first [] bracket arg is the X pos, the second <> arg is the Y pos and the () arg is the Z pos. These arrays link up, make sure all 3 of these indexes have the same number of values in them, otherwise they cant marry or link the numbers together""",
+
+"3dsf": """to do a 3d surface graph
+EG: 3dcl[-5]<5.1>(0.2)
+the [] bracket arg denotes the lowest point and the <> brackets denote the highest, the () brackets denotes the graphics, smaller float point = more polygons. (0 DOES NOT WORK, NEEDS TO BE FLOAT)""",
+
+"3dcl": """to do a 3d coil graph
+EG: 3dcl[0]<10>(6){2}""",
+
+"2dsc": """ to do a 2d scatter graph
+EG: 3dcl[1,2,3,4,5,6,7,8,9]<1,2,3,4,5,6,7,8,9>
+the first [] bracket arg is the X pos, the second <> arg is the Y pos. These arrays link up, make sure all 3 of these indexes have the same number of values in them, otherwise they cant marry or link the numbers together""",
+
+"2dsp": """show a 2d spectural map of any image on your computer
+EG: 2dsp['Users/User/Desktop/obama.jpg']""",
+
+"brcd": """render and create a barcode from binary
+EG: brcd[ 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1,]""",
+
+"3dsp": """create a 3d spore growing animation
+EG: 3dsp[50]<0.05>
+the first [] bracket represents how long the spores will grow for, anything >200 will look wacky. the <> brackets represent the spore scale essentially, keep it at 0.05, it is reccomended.""",
+
+"is": """give arguments with the is control flow.
+EG: is[50==30]""",
+
+"help": """literally the command your running lmao""",
+
+}
+
 
 loop = True
 while loop == True:
@@ -41,7 +155,23 @@ while loop == True:
             return s[start:end]
         except ValueError:
             return ""
-    
+
+    if "help" in s2:
+        calc = (eval(find_between( s, "[", "]" )))
+        print("")
+        print(loa[calc])
+        print("")
+    if "lg--" in s2:
+        calc = (eval(find_between( s, "[", "]" )))
+        num = (eval(find_between( s, "<", ">" )))
+        disp = (eval(find_between( s, "(DN:", ")" )))
+        if disp == False:
+            for i in range(num):
+                print(calc)
+        if disp == True:
+            for i in range(num):
+                print((calc),(" "),(i))
+        print(calc)
     if "get" in s2: 
         url = (eval(find_between( s, "[", "]" )))
         payload = {(eval(find_between( s, "<", ">" )))}
@@ -264,7 +394,7 @@ A very important rule to note, if you a passing an argument and this argument is
         ani = animation.FuncAnimation(
         fig, update_lines, num_steps, fargs=(walks, lines), interval=100)
         plt.show()
-    if "cls" in s2:
+    if "zclr" in s2:
         os.system("cls")
     if "pyth" in s2:
         input_val = (eval(find_between( s, "[", "]" )))
