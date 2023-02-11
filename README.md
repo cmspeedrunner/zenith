@@ -9,6 +9,14 @@
 EG: <b>log['Hello World!']<br></b>
 EG: <b>log[5*5+3-3/3]<br></b>
 
+`lg--` - will log something for a number of times<br>
+EG: <b>lg--['Hello World!']<500>(DN: True)<br></b>
+the [] bracket denotes the value to be logging. The <> bracket denotes how many times you will be logging that value, the () bracket is essentially asking if you want to display the number, DN meaning Display Number, if it is set to true then your output would look like this:<br>
+Hello World! 0<br>
+Hello World! 1<br>
+Hello World! 2<br>
+ect...<br>
+
 `get` - send a http post request<br>
 EG: <b>get['https://google.com']<text/html><br></b>
 
