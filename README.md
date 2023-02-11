@@ -7,6 +7,10 @@ Zenith is a interpreted, one line, Command Line style programming language with 
 EG: <b>log['Hello World!']<br></b>
 EG: <b>log[5*5+3-3/3]<br></b>
 
+`get` - send a http post request<br>
+EG: <b>get['https://google.com']<text/html><br></b>
+EG: <b>log[5*5+3-3/3]<br></b>
+
 `cdir` - this is the create directory function and will create a directory at the path specified<br>
 EG: <b>cdir['C:\Users\User\Desktop\New Dir']<br></b>
 
@@ -48,6 +52,9 @@ This will break the loop, why am i telling you this? Idk, it gives you more cont
 `u2i` - allows you to convert a Url 2 (to) an Image<br>
 EG: <b>pyth['https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg']<'Users/User/Desktop/obama.jpg'></b><br>
 the first argument is the url, the second is the name and or location to save it to.<br>
+ 
+`html` - allows you to convert a url to pure html<br>
+EG: <b>html['https://google.com']</b><br>
  
 # Variables
 `var` - this will declare a string variable.<br>
