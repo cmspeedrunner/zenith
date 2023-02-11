@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/109184310/218226338-9dab63e7-e3f3-40c9-8fc6-abeb5bab4120.png)
 
 # Zenith
-## Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system, control flow editing, variables, calculations, immense data analysis, conversion and web interaction with easy, and readable syntax.
+## Zenith is a interpreted, one line, Command Line style programming language with high level access to commands to the system, control flow editing, variables, calculations, immense data analysis, conversion and web interaction with interesting, and semi-readable syntax.
 
 # Syntax
 
