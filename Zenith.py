@@ -24,6 +24,8 @@ loop = True
 while loop == True:
     plt.rcParams["figure.autolayout"] = True
     s = input("ZNTH>>>")
+    s2 = s.split('[')
+
     def find_between( s, first, last ):
         try:
             start = s.index( first ) + len( first )
@@ -39,6 +41,7 @@ while loop == True:
             return s[start:end]
         except ValueError:
             return ""
+    
     if "get" in s: 
         url = (eval(find_between( s, "[", "]" )))
         payload = {(eval(find_between( s, "<", ">" )))}
@@ -67,86 +70,86 @@ while loop == True:
   
         img = Image.open(name)
         img.show()
-    if "log" in s:
+    if "log" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         print(calc)
     
-    if "cdir" in s:
+    if "cdir" in s2:
         os.mkdir(eval(find_between( s, "[", "]" )))
-    if "rand" in s:
+    if "rand" in s2:
         main = int(eval(find_between( s, "[", "]" )))
         print(random.randint(0,main))
-    if "rinr" in s:
+    if "rinr" in s2:
         main = int(eval(find_between( s, "[", "]" )))
         main2 = int(eval(find_between( s, "<", ">" )))
         print(random.randint(main,main2))
-    if "wrto" in s and "[L:" in s and "[L:'" not in s:
+    if "wrto" in s2 and "[L:" in s2 and "[L:'" not in s2:
         location = (eval(find_between( s, "[L:'", "']" )))
         content = (eval(find_between( s, "<C:'", "'>" )))
         f = open(location, "a")
         f.write(content)
         f.close()
-    if "wrto" in s:
+    if "wrto" in s2:
         location = (eval(find_between( s, "[L:", "]" )))
         content = (eval(find_between( s, "<C:", ">" )))
         f = open(location, "a")
         f.write(content)
         f.close()
-    if "rule" in s:
+    if "rule" in s2:
         print("""
 A very important rule to note, if you a passing an argument and this argument is not a value but is a command (like log['hello']) you will not be able to do that, you cannot pass zenith commands/codelines through arguments, you can pass any data type though just not zenith commands. You can however pass some python commands through arguments, for example log[print("hello")] or var['random']<random.randint(0,10). I dont reccomend that you pass python commands through these but its just something to note. Its kinda like a backdoor.
         """)
-    if "ourl" in s:
+    if "ourl" in s2:
         log = (eval(find_between( s, "[", "]" )))
         webbrowser.open_new(log)
-    if "pass" in s:
+    if "pass" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         os.system(calc)
-    if "dfil" in s:
+    if "dfil" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         os.remove(calc)
-    if "ddir" in s:
+    if "ddir" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         os.removedirs(calc)
-    if "size" in s:
+    if "size" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         main = (sys.getsizeof(calc)," BITS")
         print(main)
-    if "what" in s:
+    if "what" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         print(type(calc))
-    if "var" in s and "<'" not in s:
+    if "var" in s2 and "<'" not in s2:
         input_name = find_between( s, "['", "']" ) 
         input_val = (eval(find_between( s, "<", ">" )))
         globals()[input_name] = input_val
 
-    if "up" in s:
+    if "up" in s2:
         value = (eval(find_between( s, "[", "]" )))
         main = value.upper()
         print(main)
-    if "low" in s:
+    if "low" in s2:
         value = (eval(find_between( s, "[", "]" )))
         main = value.lower()
         print(main)
-    if "tts" in s:
+    if "tts" in s2:
         value = (eval(find_between( s, "[", "]" )))
         engine.say(value)
         engine.runAndWait()
-    if "var" in s and "<'" in s:
+    if "var" in s2 and "<'" in s2:
         input_name = find_between( s, "['", "']" ) 
         input_val = (str(find_between( s, "<'", "'>" )))
         globals()[input_name] = input_val
-    if "vers" in s:
+    if "vers" in s2:
         github = 'https://github.com/cmspeedrunner/zenith'
         print("\nZenithScript Programming Language\nCmSpeedrunner2023\nOpen Source\nV/0.4\nhttps://github.com/cmspeedrunner/zenith")
-    if "2dln" in s:
+    if "2dln" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         oppf = np.array(opp)
         opp2f = np.sort(oppf)
         plt.title("Line Graph")
         plt.plot(oppf, opp2f, color="red")
         plt.show()
-    if "3dsc" in s:
+    if "3dsc" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         opp2 = (eval(find_between( s, "<", ">" ))) 
         opp3 = (eval(find_between( s, "(", ")" ))) 
@@ -158,7 +161,7 @@ A very important rule to note, if you a passing an argument and this argument is
         ax.scatter(opp, opp2, opp3, c = 'r', s = 50)
         ax.set_title('3D Scatter Plot')
         plt.show()
-    if "3dcl" in s:
+    if "3dcl" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         opp2 = (eval(find_between( s, "<", ">" ))) 
         opp3 = (eval(find_between( s, "(", ")" ))) 
@@ -174,7 +177,7 @@ A very important rule to note, if you a passing an argument and this argument is
         ax.plot3D(x, y, t)
 
         plt.show()
-    if "3dsf" in s:
+    if "3dsf" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         opp2 = (eval(find_between( s, "<", ">" ))) 
         opp3 = (eval(find_between( s, "(", ")" ))) 
@@ -192,18 +195,18 @@ A very important rule to note, if you a passing an argument and this argument is
         fig.colorbar(surf, shrink=0.5, aspect=8)
         plt.show()
 
-    if "3dgr" in s:
+    if "3dgr" in s2:
         fig = plt.figure(figsize = (12,10))
         ax = plt.axes(projection='3d')
         plt.show()
-    if "2dsc" in s:
+    if "2dsc" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         opp2 = (eval(find_between( s, "<", ">" )))
         x = np.array([opp])
         y = np.array([opp2])
         plt.scatter(x, y)
         plt.show()
-    if "2dht" in s:
+    if "2dht" in s2:
         opp = (eval(find_between( s, "[", "]" ))) 
         fig = plt.figure(opp)
         img = mpimg.imread(opp)
@@ -222,7 +225,7 @@ A very important rule to note, if you a passing an argument and this argument is
         ax1.set_xlabel('Intensity (a.u.)')
         ax1.set_ylabel('Density')
         plt.show()
-    if "brcd" in s:
+    if "brcd" in s2:
         main = (eval(find_between( s, "[", "]" )))
         code = np.array([main])
 
@@ -235,7 +238,7 @@ A very important rule to note, if you a passing an argument and this argument is
         ax.imshow(code.reshape(1, -1), cmap='binary', aspect='auto',
               interpolation='nearest')
         plt.show()
-    if "3dsp" in s:
+    if "3dsp" in s2:
         main = (eval(find_between( s, "[", "]" )))
         main2 = (eval(find_between( s, "<", ">" )))
         np.random.seed(19680801)
@@ -261,15 +264,16 @@ A very important rule to note, if you a passing an argument and this argument is
         ani = animation.FuncAnimation(
         fig, update_lines, num_steps, fargs=(walks, lines), interval=100)
         plt.show()
-
-    if "pyth" in s:
+    if "cls" in s2:
+        os.system("cls")
+    if "pyth" in s2:
         input_val = (eval(find_between( s, "[", "]" )))
         globals()[""] = input_val
-    if "is" in s:
+    if "is" in s2:
         calc = (eval(find_between( s, "[", "]" )))
         mainy = print(calc)
-    if "" in s and "exit" not in s:
+    if "" in s2 and "exit" not in s2:
         continue
     
-    if "exit" in s:
+    if "exit" in s2:
         break
