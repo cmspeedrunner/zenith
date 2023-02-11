@@ -119,3 +119,6 @@ EG: <b>is[50==30]</b><br>
 ### Example:
 ### ![image](https://user-images.githubusercontent.com/109184310/218225334-6ae1fb3b-75cd-41fd-9e4a-f2180b9c6830.png)
 
+# Important rules to note
+A very important rule to note, if you a passing an argument and this argument is not a value but is a command (like `log[rinr[0]<10>]`) you will not be able to do that, you cannot pass zenith commands/codelines through arguments, you can pass any data type, for example `var['a']<True>` though just not zenith commands. You can however pass some python commands through arguments, for example `log[print("hello")]` or `var['random']<random.randint(0,10)>`. I dont reccomend that you pass python commands through these but its just something to note. Its kinda like a backdoor.
+
