@@ -1,6 +1,7 @@
 import os
 import webbrowser
 import sys
+import requests
 import random
 import keyboard
 import numpy as np
@@ -14,11 +15,15 @@ import matplotlib.cbook as cbook
 import matplotlib.cm as cm
 from matplotlib.collections import LineCollection
 from matplotlib.ticker import MultipleLocator
+import pyperclip
+import scipy
+import pyttsx3
+engine = pyttsx3.init()
 
 loop = True
 while loop == True:
     plt.rcParams["figure.autolayout"] = True
-    s = input("ZTH>>>")
+    s = input("ZNTH>>>")
     def find_between( s, first, last ):
         try:
             start = s.index( first ) + len( first )
@@ -34,7 +39,25 @@ while loop == True:
             return s[start:end]
         except ValueError:
             return ""
-    
+    if "get" in s: 
+        url = (eval(find_between( s, "[", "]" )))
+        payload = {(eval(find_between( s, "<", ">" )))}
+
+        response = requests.get(url, params=payload)
+        response_json = response.json()
+        for i in response_json:
+            print(i, "\n")
+    if "html" in s:
+        url = (eval(find_between( s, "[", "]" )))
+        fp = urllib.request.urlopen(url)
+        mybytes = fp.read()
+
+        mystr = mybytes.decode("utf8")
+        fp.close()
+        pyperclip.copy(mystr)
+
+        print(mystr)
+        print("\n\nHTML+ COPIED TO CLIPBOARD (NOT THIS BIT)")
     if "u2i" in s:
         url = (eval(find_between( s, "[", "]" )))
         name = (eval(find_between( s, "<", ">" )))
@@ -47,7 +70,7 @@ while loop == True:
     if "log" in s:
         calc = (eval(find_between( s, "[", "]" )))
         print(calc)
-
+    
     if "cdir" in s:
         os.mkdir(eval(find_between( s, "[", "]" )))
     if "rand" in s:
@@ -69,6 +92,10 @@ while loop == True:
         f = open(location, "a")
         f.write(content)
         f.close()
+    if "rule" in s:
+        print("""
+A very important rule to note, if you a passing an argument and this argument is not a value but is a command (like log['hello']) you will not be able to do that, you cannot pass zenith commands/codelines through arguments, you can pass any data type though just not zenith commands. You can however pass some python commands through arguments, for example log[print("hello")] or var['random']<random.randint(0,10). I dont reccomend that you pass python commands through these but its just something to note. Its kinda like a backdoor.
+        """)
     if "ourl" in s:
         log = (eval(find_between( s, "[", "]" )))
         webbrowser.open_new(log)
@@ -85,20 +112,33 @@ while loop == True:
         calc = (eval(find_between( s, "[", "]" )))
         main = (sys.getsizeof(calc)," BITS")
         print(main)
-        print(len(find_between( s, "[", "]" ))," BYTES")
-        
+    if "what" in s:
+        calc = (eval(find_between( s, "[", "]" )))
+        print(type(calc))
     if "var" in s and "<'" not in s:
         input_name = find_between( s, "['", "']" ) 
         input_val = (eval(find_between( s, "<", ">" )))
         globals()[input_name] = input_val
-        
+
+    if "up" in s:
+        value = (eval(find_between( s, "[", "]" )))
+        main = value.upper()
+        print(main)
+    if "low" in s:
+        value = (eval(find_between( s, "[", "]" )))
+        main = value.lower()
+        print(main)
+    if "tts" in s:
+        value = (eval(find_between( s, "[", "]" )))
+        engine.say(value)
+        engine.runAndWait()
     if "var" in s and "<'" in s:
         input_name = find_between( s, "['", "']" ) 
         input_val = (str(find_between( s, "<'", "'>" )))
         globals()[input_name] = input_val
     if "vers" in s:
         github = 'https://github.com/cmspeedrunner/zenith'
-        print("\nZenithScript Programming Language\nCmSpeedrunner2023\nOpen Source\nV/0.3\nhttps://github.com/cmspeedrunner/zenith")
+        print("\nZenithScript Programming Language\nCmSpeedrunner2023\nOpen Source\nV/0.4\nhttps://github.com/cmspeedrunner/zenith")
     if "2dln" in s:
         opp = (eval(find_between( s, "[", "]" ))) 
         oppf = np.array(opp)
@@ -164,13 +204,14 @@ while loop == True:
         plt.scatter(x, y)
         plt.show()
     if "2dht" in s:
-        fig = plt.figure("img")
-        name = (eval(find_between( s, "[", "]" )))
-        img = mpimg.imread(name)
+        opp = (eval(find_between( s, "[", "]" ))) 
+        fig = plt.figure(opp)
+        img = mpimg.imread(opp)
         
-        imgplot = plt.imshow(img)
-        imgplot.set_cmap('nipy_spectral')
-        ax1 = fig.add_subplot(2, 2, 2)
+        fig = fig.add_subplot(2, 2, 1)
+        fig.imshow(img, cmap = "Blues")
+        fig.axis('on')
+        ax1 = plt.subplot(2, 2, 2)
         img = np.ravel(img)
         img = img[np.nonzero(img)]  # Ignore the background
         img = img / (2**16 - 1)  # Normalize
@@ -180,7 +221,6 @@ while loop == True:
         ax1.set_yticks([])
         ax1.set_xlabel('Intensity (a.u.)')
         ax1.set_ylabel('Density')
-        plt.tight_layout()
         plt.show()
     if "brcd" in s:
         main = (eval(find_between( s, "[", "]" )))
@@ -225,8 +265,11 @@ while loop == True:
     if "pyth" in s:
         input_val = (eval(find_between( s, "[", "]" )))
         globals()[""] = input_val
-
+    if "is" in s:
+        calc = (eval(find_between( s, "[", "]" )))
+        mainy = print(calc)
     if "" in s and "exit" not in s:
         continue
+    
     if "exit" in s:
         break
