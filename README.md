@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/109184310/218226338-9dab63e7-e3f3-40c9-8fc6-abeb5bab4120.png)
 
 # Zenith
-Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system, control flow editing, variables, calculations, immense data analysis, conversion and web interaction with easy, and readable syntax.
+## Zenith is a interpreted, one line, Command Line style programming language with very low level access to the system, control flow editing, variables, calculations, immense data analysis, conversion and web interaction with easy, and readable syntax.
 
 # Syntax
 
@@ -58,6 +58,18 @@ the first argument is the url, the second is the name and or location to save it
 `html` - allows you to convert a url to pure html<br>
 EG: <b>html['https://google.com']</b><br>
  
+`what` - print type of value<br>
+EG: <b>what[True]</b><br>
+RESULT: <b>class: bool</b><br>
+EG: <b>what['Yo']</b><br>
+RESULT: <b>class: str</b><br>
+EG: <b>what[9.9]</b><br>
+RESULT: <b>class: float</b><br>
+EG: <b>what[1]</b><br>
+RESULT: <b>class: int</b><br>
+EG: <b>what['Yo',9.9,1,True,]</b><br>
+RESULT: <b>class: tuple</b><br>
+
 # Variables
 `var` - this will declare a string variable.<br>
 EG: <b>var['x']<'Hello World'></b><br>
@@ -70,7 +82,7 @@ the [] brackets denote the variable name and the <> brackets denote the content 
 `log` - can also calculate variables<br>
 EG: <b>log[x+y-z*w]</b><br>
 providing that you have set up your variables with values, you can concatonate strings with other strings or do calculations<br>
-
+ 
 
 # Graphing and plotting (EXPERIMENTAL)
 `2dln` - to do a 2d line graph plot.<br>
