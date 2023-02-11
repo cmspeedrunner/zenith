@@ -42,7 +42,7 @@ while loop == True:
         except ValueError:
             return ""
     
-    if "get" in s: 
+    if "get" in s2: 
         url = (eval(find_between( s, "[", "]" )))
         payload = {(eval(find_between( s, "<", ">" )))}
 
@@ -50,7 +50,7 @@ while loop == True:
         response_json = response.json()
         for i in response_json:
             print(i, "\n")
-    if "html" in s:
+    if "html" in s2:
         url = (eval(find_between( s, "[", "]" )))
         fp = urllib.request.urlopen(url)
         mybytes = fp.read()
@@ -61,7 +61,7 @@ while loop == True:
 
         print(mystr)
         print("\n\nHTML+ COPIED TO CLIPBOARD (NOT THIS BIT)")
-    if "u2i" in s:
+    if "u2i" in s2:
         url = (eval(find_between( s, "[", "]" )))
         name = (eval(find_between( s, "<", ">" )))
         urllib.request.urlretrieve(
