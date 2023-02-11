@@ -43,6 +43,15 @@ EG: <b>size['Hello World 2023!']<br></b>
 
 `vers` - this will display the version.
 EG: <b>vers<br></b>
+
+`up` - this will uppercase text.
+EG: <b>up['hello']<br></b>
+
+`low` - this will lowercase text.
+EG: <b>low['HELLO']<br></b>
+ 
+`tts` - this will speak out text using tts.
+EG: <b>tts['Hello Zenith!']<br></b>
  
 `pyth` - allows you to pass python lines through zenith<br>
 EG: <b>pyth[print("Hello Zenith!")]</b><br>
