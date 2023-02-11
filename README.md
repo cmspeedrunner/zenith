@@ -93,7 +93,7 @@ EG: <b>brcd[ 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1
 EG: <b>3dsp[50]<0.05></b><br>
 the first [] bracket represents how long the spores will grow for, anything >200 will look wacky. the <> brackets represent the spore scale essentially, keep it at 0.05, it is reccomended.
 # Control Flow
-is - give arguments with the is control flow. 
+>is> - give arguments with the is control flow. <br>
 EG: <b>is[50==30]</b><br>
 ### Example:
 ### ![image](https://user-images.githubusercontent.com/109184310/218225334-6ae1fb3b-75cd-41fd-9e4a-f2180b9c6830.png)
